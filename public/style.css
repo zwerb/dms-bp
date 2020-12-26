@@ -20,6 +20,153 @@ form div {
   display: inline-block;
 }
 
+/* Main Wrapper */
+
+.main-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.main-wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+/* Main Body Styling */
+
+/* Header */
+
+.header {
+  background: deepskyblue;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.header-branding {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 40px;
+  font-size: 32px;
+
+  color: white;
+}
+
+.header-image {
+  height: 40px;
+  margin-right: 10px;
+}
+
+@media all and (max-width: 800px) {
+  .header {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .header {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+}
+
+/* Footer */
+
+.footer {
+  background: lightgreen;
+}
+
+.main {
+  text-align: left;
+  background: deepskyblue;
+}
+
+.aside-1 {
+  background: gold;
+}
+
+.aside-2 {
+  background: hotpink;
+}
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1 0 0;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .main {
+    flex: 3 0px;
+  }
+  .aside-1 {
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+  .aside-2 {
+    order: 3;
+  }
+  .footer {
+    order: 4;
+  }
+}
+
+body {
+  padding: 2em;
+}
+
+/* Navbar */
+
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: deepskyblue;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+}
+
+.navigation a:hover {
+  background: #1565c0;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  .navigation a {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
 /* Dropzone */
 
 .dzu-dropzone {
