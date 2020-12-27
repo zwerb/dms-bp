@@ -11,6 +11,9 @@ const PORT = process.env.PORT || 8080
 const app = express()
 const socketio = require('socket.io')
 module.exports = {app, PORT}
+const fileUpload = require('express-fileupload')
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
 // This is a global Mocha hook, used for resource cleanup.
 // Otherwise, Mocha v4+ never quits after tests.
@@ -44,7 +47,20 @@ const createApp = () => {
   // logging middleware
   app.use(morgan('dev'))
 
-  // body parsing middleware
+  // file upload middleware
+  app.use(
+    fileUpload({
+      createParentPath: true,
+      limits: {
+        fileSize: 12 * 1024 * 1024 * 1024 //12 MB max file(s) size
+      }
+    })
+  )
+  app.use(cors())
+  // app.use(bodyParser.json());
+  // app.use(bodyParser.urlencoded({extended: true}));
+
+  // additional parsing middleware
   app.use(express.json())
   app.use(express.urlencoded({extended: true}))
 

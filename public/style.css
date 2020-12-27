@@ -44,6 +44,22 @@ form div {
 
 /* Main Body Styling */
 
+/* height-width-margin-padding */
+.image-small {
+  max-height: 40px;
+  max-width: 40px;
+  margin: 10px;
+}
+
+.column-items {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.column-items > * {
+  padding: 10px;
+}
+
 /* Header */
 
 .header {

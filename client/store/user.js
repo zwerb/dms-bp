@@ -1,5 +1,6 @@
 import axios from 'axios'
 import history from '../history'
+import {fetchGetUserImages} from '../store'
 
 /**
  * ACTION TYPES
@@ -25,6 +26,7 @@ export const me = () => async dispatch => {
   try {
     const res = await axios.get('/auth/me')
     dispatch(getUser(res.data || defaultUser))
+    dispatch(fetchGetUserImages(res.data))
   } catch (err) {
     console.error(err)
   }
@@ -40,6 +42,7 @@ export const auth = (email, password, method) => async dispatch => {
 
   try {
     dispatch(getUser(res.data))
+    dispatch(fetchGetUserImages(res.data))
     history.push('/home')
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)

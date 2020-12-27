@@ -18,14 +18,21 @@ const User = db.define('user', {
   },
   salt: {
     type: Sequelize.STRING,
-    // Making `.salt` act like a function hides it when serializing to JSON.
-    // This is a hack to get around Sequelize's lack of a "private" option.
     get() {
       return () => this.getDataValue('salt')
     }
   },
   googleId: {
     type: Sequelize.STRING
+  },
+  maxUploads: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    validate: {
+      max: 5,
+      min: 1
+    },
+    defaultValue: 3
   }
 })
 
