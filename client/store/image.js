@@ -53,7 +53,7 @@ export const fetchRecordUploadedImage = (image, user) => async dispatch => {
     dispatch(recordUploadedImage(res.data))
 
     // now update the list of images
-    dispatch(addOneUserImage(image))
+    dispatch(addOneUserImage(res.data))
   } catch (err) {
     console.error(err)
   }
