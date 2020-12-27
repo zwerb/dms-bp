@@ -43,11 +43,7 @@ export const fetchRecordUploadedImage = (image, user) => async dispatch => {
   try {
     const imageToUpload = {...image, userId: user.id}
 
-    console.log('trying to record image: ', imageToUpload)
-
     res = await axios.post(`/api/upload/record`, imageToUpload)
-
-    console.log('record res')
 
     if (!res.status == 201) {
       console.error('Status 501 - could not add image to databse')
@@ -68,9 +64,6 @@ export const fetchUploadImage = (image, user) => async dispatch => {
 
   try {
     const {file, hashName} = image
-
-    console.log('trying to fetchUpload image: ', image)
-    console.log('where to put hashName name ', hashName)
 
     const formData = new FormData()
     formData.append('file', file)
@@ -104,9 +97,6 @@ export const fetchUploadImage = (image, user) => async dispatch => {
       fileUrl: res.data.data.uploadedFileUrl,
       name: res.data.data.originalName
     }
-
-    console.log('imageToRecord', imageToRecord)
-    console.log('as user', user)
 
     // now record the uploaded image
     dispatch(fetchRecordUploadedImage(imageToRecord, user))

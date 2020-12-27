@@ -23,9 +23,9 @@ const UserData = props => {
         {userImages && userImages.length > 0 ? (
           <div className="column-items">
             {userImages.sort((a, b) => b.id - a.id).map(image => (
-              <div className="column-items" key={image.id}>
-                <span>{image.name}</span>
-                <img className="image-small" src={image.fileUrl} />
+              <div className="image-card" key={image.id}>
+                <span className="card-title">{image.name}</span>
+                <img className="card-preview" src={image.fileUrl} />
                 <button
                   onClick={() => {
                     removeImage(image.id)

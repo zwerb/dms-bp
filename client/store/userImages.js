@@ -57,7 +57,7 @@ export const fetchGetUserImages = user => {
 
       dispatch(getUserImages(images))
     } catch (err) {
-      console.log(err)
+      console.error(err)
     }
   }
 }

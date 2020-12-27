@@ -13,7 +13,6 @@ const App = () => {
         </div>
         <Navbar />
       </header>
-      <hr />
       <content className="main">
         <Routes />
       </content>
@@ -21,7 +20,9 @@ const App = () => {
       <aside className="aside aside-2">
         <UserData />
       </aside>
-      <footer className="footer">Footer</footer>
+      <footer className="footer">
+        <a href="https://www.zwerb.com">Zwerb</a>
+      </footer>
     </div>
   )
 }

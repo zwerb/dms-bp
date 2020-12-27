@@ -20,7 +20,6 @@ const storage = multer.diskStorage({
     cb(null, uploadsURL)
   },
   filename: (req, file, cb) => {
-    console.log(file)
     let filetype = ''
     if (file.mimetype === 'image/gif') {
       filetype = 'gif'
@@ -38,13 +37,10 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage})
 
 router.post('/image', upload.single('file'), function(req, res, next) {
-  console.log('req.file', req.file)
-
   if (!req.file) {
     res.status(500)
     // return next(err)
   }
-  console.log('PORT', PORT)
 
   const imageObject = {
     fileUrl: `http://localhost:${PORT}/uploads/images/` + 'test'
@@ -60,9 +56,6 @@ router.post('/upload-image', async (req, res) => {
         message: 'No file uploaded'
       })
     } else {
-      console.log('req.files', req.files)
-      console.log('req.body', req.body)
-
       //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
       let userImage = req.files.file
 
@@ -77,7 +70,6 @@ router.post('/upload-image', async (req, res) => {
 
       let fileUrl = uploadsURL + imageName
 
-      console.log('writing image: ', fileUrl)
       //Use the mv() method to place the file in upload directory (i.e. "uploads")
       userImage.mv(fileUrl)
 
@@ -115,8 +107,6 @@ router.delete('/remove-image/:imageId', async (req, res, next) => {
     const imageToDelete = response[0]
 
     const pathToRemove = path.join('./public/' + imageToDelete.fileUrl)
-
-    console.log(pathToRemove)
 
     fs.unlinkSync(pathToRemove)
     // try {

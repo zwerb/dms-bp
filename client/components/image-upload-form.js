@@ -26,7 +26,7 @@ const ImageUploadForm = props => {
 
   const handleSubmit = (files, allFiles) => {
     const {recordUploadedImage, uploadImage, user} = props
-    console.log(files.map(f => f.meta))
+    // console.log(files.map(f => f.meta))
     files.forEach(f => {
       const imageToUpload = {
         file: f.file,
@@ -35,9 +35,6 @@ const ImageUploadForm = props => {
           .slice(-1)
           .pop()
       }
-      console.log('attempting to upload image: ', imageToUpload)
-      console.log('uploading as user: ', user)
-
       uploadImage(imageToUpload, user)
     })
     allFiles.forEach(f => f.remove())

@@ -70,7 +70,8 @@ const createApp = () => {
   // session middleware with passport
   app.use(
     session({
-      secret: process.env.SESSION_SECRET || 'my best friend is Cody',
+      secret:
+        process.env.SESSION_SECRET || 'session secret is not in process vars',
       store: sessionStore,
       resave: false,
       saveUninitialized: false
