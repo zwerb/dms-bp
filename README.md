@@ -2,11 +2,12 @@
 
 _A prototype data management system for machine learning_
 
+## To-Do
+
+* Protect API Routes
+* Update front landing page
+
 ## Setup
-
-## Customize
-
-Now that you've got the code, follow these steps to get acclimated:
 
 * `git clone https://github.com/zwerb/dms-bp.git`
 * `cd dms-bp`
