@@ -12,16 +12,23 @@ const Navbar = ({handleClick, isLoggedIn}) => (
           <Link to="/home">Home</Link>
         </li>
         <li>
+          <Link to="/uploads">Uploads</Link>
+        </li>
+        <li>
+          <Link to="/neurons">Neurons</Link>
+        </li>
+
+        <li>
           <a href="#" onClick={handleClick}>
             Logout
           </a>
         </li>
-        <li>
-          <Link to="/upload">Upload</Link>
-        </li>
       </ul>
     ) : (
       <ul className="navigation">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
         <li>
           <Link to="/login">Login</Link>
         </li>

@@ -2,7 +2,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome, ImageUploadForm} from './components'
+import {
+  Login,
+  Signup,
+  UserHome,
+  ImageUploadForm,
+  LandingHome,
+  NeuronSketch
+} from './components'
 import {me, fetchGetUserImages} from './store'
 
 /**
@@ -20,10 +27,12 @@ class Routes extends Component {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route exact path="/" component={LandingHome} />
         {isLoggedIn && (
           <Switch>
             <Route path="/home" component={UserHome} />
-            <Route path="/upload" component={ImageUploadForm} />
+            <Route path="/uploads" component={ImageUploadForm} />
+            <Route path="/neurons" component={NeuronSketch} />
           </Switch>
         )}
       </Switch>

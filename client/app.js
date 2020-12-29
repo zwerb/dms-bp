@@ -8,7 +8,10 @@ const App = () => {
     <div className="main-wrapper">
       <header className="header">
         <div className="header-branding">
-          <img className="header-image" src="images/zwerb-z_logo-WHT_BDR.png" />
+          <img
+            className="header-image"
+            src="/images/zwerb-z_logo-WHT_BDR.png"
+          />
           DMS
         </div>
         <Navbar />

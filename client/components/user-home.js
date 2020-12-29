@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 
+import {NeuronSketch} from '../components'
+
 /**
  * COMPONENT
  */
@@ -9,8 +11,9 @@ export const UserHome = props => {
   const {email, user} = props
 
   return (
-    <div>
+    <div className="column-items">
       <h3>Welcome, {email}</h3>
+      <NeuronSketch />
     </div>
   )
 }

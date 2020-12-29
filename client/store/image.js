@@ -118,7 +118,7 @@ export const fetchRemoveImage = imageId => async dispatch => {
     dispatch(clearOneUserImage(imageId))
     dispatch(removeImage(imageId))
 
-    history.push('/login')
+    history.push('/uploads')
   } catch (err) {
     console.error(err)
   }

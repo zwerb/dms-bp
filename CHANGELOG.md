@@ -20,6 +20,12 @@
 * sequelize update to 5.2.15 from 4.38.0
 * socket.io update to 2.2.0 from 2.1.0
 
+### Zwerb Additions:
+
+* React Bootstrap
+* React Dropzone Uploader
+* p5.js
+
 ### DevDependencies
 
 * axios-mock-adatper update to 1.16.0 from 1.15.0

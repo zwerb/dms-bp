@@ -60,6 +60,18 @@ form div {
   margin: 10px;
 }
 
+/* Form Styling */
+
+.auth-form {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.auth-form > * {
+  padding: 5px;
+}
+
 /* Image Card */
 
 .image-card {
@@ -239,6 +251,8 @@ body {
 
 .navigation a:hover {
   background: #1565c0;
+  color: white;
+  text-decoration: none;
 }
 
 @media all and (max-width: 800px) {

@@ -46,7 +46,7 @@ const UserData = props => {
       </div>
     )
   } else {
-    return <div className="column-items" />
+    return <div className="column-items">Aside 2</div>
   }
 }
 

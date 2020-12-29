@@ -73,10 +73,12 @@ router.post('/upload-image', async (req, res) => {
       //Use the mv() method to place the file in upload directory (i.e. "uploads")
       userImage.mv(fileUrl)
 
-      let uploadedFileUrl = fileUrl
-        .split('public/')
-        .slice(-1)
-        .pop()
+      let uploadedFileUrl =
+        '/' +
+        fileUrl
+          .split('public/')
+          .slice(-1)
+          .pop()
 
       //send response
       res.status(201).send({
